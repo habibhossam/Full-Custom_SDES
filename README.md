@@ -1,4 +1,6 @@
 This is my project of S-DES for the course Advanced Full Custom VLSI 
+
+
 This project focuses on the design and implementation of a Simplified Data Encryption Standard (S-DES) algorithm, which is a scaled-down version of the original DES algorithm. The scope of this project includes the following:
 
 1. Behavioral-level design and simulation of the S-DES algorithm, including the encryption and decryption processes.
