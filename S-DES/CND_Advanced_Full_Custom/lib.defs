@@ -1,0 +1,6 @@
+DEFINE CND_Advanced_Full_Custom CND_Advanced_Full_Custom
+ASSIGN CND_Advanced_Full_Custom libMode shared
+DEFINE analogLib TannerTools_v2022.2/Process/Standard_Libraries/analogLib
+ASSIGN analogLib libMode shared
+INCLUDE /home/vlsi/Videos/CND_Advanced_Full_Custom/TannerTools_v2022.2/Process/Generic_250nm/lib.defs
+INCLUDE /home/vlsi/Videos/CND_Advanced_Full_Custom/TannerTools_v2022.2/Process/Standard_Libraries/lib.defs

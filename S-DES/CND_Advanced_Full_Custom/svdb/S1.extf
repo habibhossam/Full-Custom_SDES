@@ -1,0 +1,9 @@
+# Automagically generated file: Please do not edit!
+lvs_ExtfVersion 3
+lvs_ExtRunTimes 1715770540 1715770540
+lvs_ExtOutFile RUNDIR /home/vlsi/Music/CND_Advanced_Full_Custom
+lvs_ExtOutFile RULES_FILE _Generic_250nm_LVS.cal_
+lvs_ExtInfoExtSummary {0 0 0 0 0 0 0 0 0 0 0}
+lvs_ExtInfoDfmSummary {0}
+lvs_ExtOutFile LAYOUT_NETLIST S1.sp
+lvs_ExtOutFile EXTRACTION_REPORT S1.lvs.report.ext

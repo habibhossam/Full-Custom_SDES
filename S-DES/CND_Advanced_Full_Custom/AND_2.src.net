@@ -1,0 +1,75 @@
+* SPICE export by:      S-Edit 2022.2.3
+* Export time:          Tue May 14 17:46:09 2024
+* Design path:          /home/vlsi/Videos/FinalProject/CND_Advanced_Full_Custom/lib.defs
+* Library:              CND_Advanced_Full_Custom
+* Cell:                 AND_2
+* Testbench:            Spice
+* View:                 schematic
+* Export as:            subcircuit definition
+* Export mode:          hierarchical
+* Exclude empty:        no
+* Exclude .model:       no
+* Exclude .hdl:         no
+* Exclude .end:         no
+* Expand paths:         no
+* Wrap lines:           no
+* Exclude simulator commands:  no
+* Exclude global pins:         no
+* Exclude instance locations:  no
+* Control property name(s):    LVS SPICE
+
+.SUBCKT NMOS25 D G S B
+.ENDS
+.SUBCKT PMOS25 D G S B
+.ENDS
+.SUBCKT NMOS33 D G S B
+.ENDS
+.SUBCKT PMOS33 D G S B
+.ENDS
+
+*************** Subcircuits ***************
+.subckt nand_2 A B Out Gnd Vdd 
+* Library name: CND_Advanced_Full_Custom
+* Cell name: nand_2
+* View name: schematic
+* PORT=B TYPE=In
+* PORT=A TYPE=In
+* PORT=Vdd TYPE=Other
+* PORT=Gnd TYPE=Other
+* PORT=Out TYPE=Out
+
+MMn1 Out A N_1 Gnd NMOS25 w=1.5u l=250n m=1 ad=975f pd=4.3u as=975f ps=4.3u nrd=433.33333m nrs=433.33333m mult=1 delvto=0 mulu0=1 $ $x=4600 $y=3500 $w=400 $h=600
+MMn2 N_1 B Gnd Gnd NMOS25 w=1.5u l=250n m=1 ad=975f pd=4.3u as=975f ps=4.3u nrd=433.33333m nrs=433.33333m mult=1 delvto=0 mulu0=1 $ $x=4600 $y=2300 $w=400 $h=600
+MMp1 Out A Vdd Vdd PMOS25 w=1.5u l=250n m=1 ad=975f pd=4.3u as=975f ps=4.3u nrd=433.33333m nrs=433.33333m mult=1 delvto=0 mulu0=1 $ $x=4000 $y=4800 $w=400 $h=600
+MMp2 Out B Vdd Vdd PMOS25 w=1.5u l=250n m=1 ad=975f pd=4.3u as=975f ps=4.3u nrd=433.33333m nrs=433.33333m mult=1 delvto=0 mulu0=1 $ $x=5100 $y=4800 $w=400 $h=600
+.ends
+
+.subckt Inverter_1 In Out Gnd Vdd 
+* Library name: CND_Advanced_Full_Custom
+* Cell name: Inverter_1
+* View name: schematic
+* PORT=Gnd TYPE=Other
+* PORT=Vdd TYPE=Other
+* PORT=In TYPE=In
+* PORT=Out TYPE=Out
+
+MMn2 Out In Gnd Gnd NMOS25 w=750n l=250n m=1 ad=487.5f pd=2.8u as=487.5f ps=2.8u nrd=866.66667m nrs=866.66667m mult=1 delvto=0 mulu0=1 $ $x=4400 $y=3500 $w=400 $h=600
+MMp2 Out In Vdd Vdd PMOS25 w=1.5u l=250n m=1 ad=975f pd=4.3u as=975f ps=4.3u nrd=433.33333m nrs=433.33333m mult=1 delvto=0 mulu0=1 $ $x=4400 $y=4500 $w=400 $h=600
+.ends
+
+.subckt AND_2 A B Y Gnd Vdd 
+* Library name: CND_Advanced_Full_Custom
+* Cell name: AND_2
+* View name: schematic
+* PORT=Y TYPE=Out
+* PORT=B TYPE=In
+* PORT=Vdd TYPE=Other
+* PORT=Gnd TYPE=Other
+* PORT=A TYPE=In
+
+XInverter_1_1 N_1 Y Gnd Vdd Inverter_1 $ $x=6500 $y=3600 $w=1800 $h=800
+Xnand_2_1 A B N_1 Gnd Vdd nand_2 $ $x=4200 $y=3600 $w=1800 $h=800
+.ends
+
+
+

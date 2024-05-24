@@ -1,0 +1,9 @@
+# Automagically generated file: Please do not edit!
+lvs_ExtfVersion 3
+lvs_ExtRunTimes 1715695647 1715695648
+lvs_ExtOutFile RUNDIR /home/vlsi/Videos/FinalProject/CND_Advanced_Full_Custom
+lvs_ExtOutFile RULES_FILE _Generic_250nm_LVS.cal_
+lvs_ExtInfoExtSummary {0 0 0 0 0 0 0 0 0 0 0}
+lvs_ExtInfoDfmSummary {0}
+lvs_ExtOutFile LAYOUT_NETLIST XOR_4bit.sp
+lvs_ExtOutFile EXTRACTION_REPORT XOR_4bit.lvs.report.ext

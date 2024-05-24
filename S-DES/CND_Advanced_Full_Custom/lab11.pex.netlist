@@ -1,0 +1,478 @@
+; DESIGN "lab11"
+; DATE "Sat Apr 20 12:19:27 2024"
+; VENDOR "Mentor Graphics Corp."
+; PROGRAM "Calibre xRC v2023.4_17.10"
+; CIRCUIT TEMPERATURE 25C
+; NOMINAL TEMPERATURE 25C
+;
+
+
+mgc_rve_device_template "NMOS25_Dummy" "D" "G" "S" "B"
+mgc_rve_device_template "NMOS25" "D" "G" "S" "B"
+mgc_rve_device_template "PMOS25" "D" "G" "S" "B"
+mgc_rve_device_template "NMOS33" "D" "G" "S" "B"
+mgc_rve_device_template "PMOS33" "D" "G" "S" "B"
+mgc_rve_device_template "cmim" "POS" "NEG"
+mgc_rve_device_template "MOSRes" "D" "G" "S" "B"
+mgc_rve_device_template "rnp" "POS" "NEG"
+mgc_rve_device_template "rhp" "POS" "NEG"
+mgc_rve_device_template "PNP" "C" "B" "E" "S"
+mgc_rve_device_template "v" "P" "M"
+mgc_rve_device_template "f" "P" "M"
+mgc_rve_parasitic_template "c" "r" "l" "k" "h"
+
+mgc_rve_cell_start "lab11" "In1" "In2" "In3" "Out1" "Out2" "Out3" "Gnd" "Vdd"
+mr_pi "NMOS25" "XInverter_1_3/MMn2" '( "XInverter_1_3/MMn2_d" "XInverter_1_3/MMn2_g" "XInverter_1_3/MMn2_s" "XInverter_1_3/MMn2_b") '( ("l" 2.5e-07) ("w" 7.5e-07) ("ad" 4.875e-13) ("as" 4.875e-13) ("pd" 2.8e-06) ("ps" 2.8e-06) ("lpe" 3) )
+mr_pi "PMOS25" "XInverter_1_3/MMp2" '( "XInverter_1_3/MMp2_d" "XInverter_1_3/MMp2_g" "XInverter_1_3/MMp2_s" "XInverter_1_3/MMp2_b") '( ("l" 2.5e-07) ("w" 1.5e-06) ("ad" 9.75e-13) ("as" 9.75e-13) ("pd" 4.3e-06) ("ps" 4.3e-06) ("lpe" 3) )
+mr_pi "NMOS25" "XInverter_1_2/MMn2" '( "XInverter_1_2/MMn2_d" "XInverter_1_2/MMn2_g" "XInverter_1_2/MMn2_s" "XInverter_1_2/MMn2_b") '( ("l" 2.5e-07) ("w" 7.5e-07) ("ad" 4.875e-13) ("as" 4.875e-13) ("pd" 2.8e-06) ("ps" 2.8e-06) ("lpe" 3) )
+mr_pi "PMOS25" "XInverter_1_2/MMp2" '( "XInverter_1_2/MMp2_d" "XInverter_1_2/MMp2_g" "XInverter_1_2/MMp2_s" "XInverter_1_2/MMp2_b") '( ("l" 2.5e-07) ("w" 1.5e-06) ("ad" 9.75e-13) ("as" 9.75e-13) ("pd" 4.3e-06) ("ps" 4.3e-06) ("lpe" 3) )
+mr_pi "NMOS25" "XInverter_1_1/MMn2" '( "XInverter_1_1/MMn2_d" "XInverter_1_1/MMn2_g" "XInverter_1_1/MMn2_s" "XInverter_1_1/MMn2_b") '( ("l" 2.5e-07) ("w" 7.5e-07) ("ad" 4.875e-13) ("as" 4.875e-13) ("pd" 2.8e-06) ("ps" 2.8e-06) ("lpe" 3) )
+mr_pi "PMOS25" "XInverter_1_1/MMp2" '( "XInverter_1_1/MMp2_d" "XInverter_1_1/MMp2_g" "XInverter_1_1/MMp2_s" "XInverter_1_1/MMp2_b") '( ("l" 2.5e-07) ("w" 1.5e-06) ("ad" 9.75e-13) ("as" 9.75e-13) ("pd" 4.3e-06) ("ps" 4.3e-06) ("lpe" 3) )
+
+mr_ni "Gnd" 32.9012 7.87358e-17 1.29512e-14 '( "XInverter_1_1/MMn2_b" "XInverter_1_2/MMn2_b" "XInverter_1_3/MMn2_b" "XInverter_1_1/MMn2_s" "XInverter_1_2/MMn2_s" "XInverter_1_3/MMn2_s" )
+mr_pp 'c "ciGnd_116" '("c_8_p" "Gnd") 0.00123999f
+mr_pp 'c "ciGnd_117" '("c_4_p" "Gnd") 0.00123999f
+mr_pp 'c "ciGnd_118" '("c_3_p" "Gnd") 0.00123999f
+mr_pp 'c "ciGnd_119" '("c_10_p" "Gnd") 0.0248122f
+mr_pp 'c "ciGnd_120" '("XInverter_1_1/MMn2_s" "Gnd") 1.93118e-19
+mr_pp 'c "ciGnd_121" '("c_6_p" "Gnd") 0.0248122f
+mr_pp 'c "ciGnd_122" '("XInverter_1_2/MMn2_s" "Gnd") 1.93118e-19
+mr_pp 'c "ciGnd_123" '("c_2_p" "Gnd") 0.0248122f
+mr_pp 'c "ciGnd_124" '("XInverter_1_3/MMn2_s" "Gnd") 1.93118e-19
+mr_pp 'r "rGnd_125" '("Gnd_105" "Gnd_108") 0.160909
+mr_pp 'r "rGnd_126" '("Gnd_105" "c_29_p") 4.12843
+mr_pp 'r "rGnd_127" '("c_26_p" "Gnd_108") 0.160909
+mr_pp 'r "rGnd_128" '("Gnd_103" "c_26_p") 4.12843
+mr_pp 'r "rGnd_129" '("Gnd_100" "Gnd_102") 0.57
+mr_pp 'r "rGnd_130" '("c_8_p" "c_29_p") 0.212317
+mr_pp 'r "rGnd_131" '("c_8_p" "Gnd_102") 2.57043
+mr_pp 'r "rGnd_132" '("Gnd_96" "Gnd_98") 0.57
+mr_pp 'r "rGnd_133" '("c_4_p" "Gnd_108") 0.0418175
+mr_pp 'r "rGnd_134" '("c_4_p" "Gnd_98") 2.57043
+mr_pp 'r "rGnd_135" '("Gnd_92" "Gnd_94") 0.57
+mr_pp 'r "rGnd_136" '("c_3_p" "Gnd_94") 2.57043
+mr_pp 'r "rGnd_137" '("Gnd" "Gnd_103") 0.106158
+mr_pp 'r "rGnd_138" '("Gnd" "c_3_p") 0.106158
+mr_pp 'r "rGnd_139" '("c_10_p" "Gnd_72") 0.000554745
+mr_pp 'r "rGnd_140" '("Gnd_69" "c_10_p") 0.581927
+mr_pp 'r "rGnd_141" '("Gnd_67" "Gnd_69") 0.000554745
+mr_pp 'r "rGnd_142" '("Gnd_66" "c_10_p") 0.0995564
+mr_pp 'r "rGnd_143" '("Gnd_65" "Gnd_102") 0.103491
+mr_pp 'r "rGnd_144" '("Gnd_65" "Gnd_66") 0.848667
+mr_pp 'r "rGnd_145" '("Gnd_64" "Gnd_67") 0.0995564
+mr_pp 'r "rGnd_146" '("Gnd_63" "Gnd_100") 0.103491
+mr_pp 'r "rGnd_147" '("Gnd_63" "Gnd_64") 0.848667
+mr_pp 'r "rGnd_148" '("Gnd_61" "Gnd_69") 1
+mr_pp 'r "rGnd_149" '("Gnd_55" "Gnd_72") 1
+mr_pp 'r "rGnd_150" '("XInverter_1_1/MMn2_s" "Gnd_55") 0.124667
+mr_pp 'r "rGnd_151" '("c_6_p" "Gnd_48") 0.000554745
+mr_pp 'r "rGnd_152" '("Gnd_45" "c_6_p") 0.581927
+mr_pp 'r "rGnd_153" '("Gnd_43" "Gnd_45") 0.000554745
+mr_pp 'r "rGnd_154" '("Gnd_42" "c_6_p") 0.0995564
+mr_pp 'r "rGnd_155" '("Gnd_41" "Gnd_98") 0.103491
+mr_pp 'r "rGnd_156" '("Gnd_41" "Gnd_42") 0.848667
+mr_pp 'r "rGnd_157" '("Gnd_40" "Gnd_43") 0.0995564
+mr_pp 'r "rGnd_158" '("Gnd_39" "Gnd_96") 0.103491
+mr_pp 'r "rGnd_159" '("Gnd_39" "Gnd_40") 0.848667
+mr_pp 'r "rGnd_160" '("Gnd_37" "Gnd_45") 1
+mr_pp 'r "rGnd_161" '("Gnd_31" "Gnd_48") 1
+mr_pp 'r "rGnd_162" '("XInverter_1_2/MMn2_s" "Gnd_31") 0.124667
+mr_pp 'r "rGnd_163" '("c_2_p" "Gnd_24") 0.000554745
+mr_pp 'r "rGnd_164" '("Gnd_21" "c_2_p") 0.581927
+mr_pp 'r "rGnd_165" '("Gnd_19" "Gnd_21") 0.000554745
+mr_pp 'r "rGnd_166" '("Gnd_18" "c_2_p") 0.0995564
+mr_pp 'r "rGnd_167" '("Gnd_17" "Gnd_94") 0.103491
+mr_pp 'r "rGnd_168" '("Gnd_17" "Gnd_18") 0.848667
+mr_pp 'r "rGnd_169" '("Gnd_16" "Gnd_19") 0.0995564
+mr_pp 'r "rGnd_170" '("Gnd_15" "Gnd_92") 0.103491
+mr_pp 'r "rGnd_171" '("Gnd_15" "Gnd_16") 0.848667
+mr_pp 'r "rGnd_172" '("Gnd_13" "Gnd_21") 1
+mr_pp 'r "rGnd_173" '("Gnd_7" "Gnd_24") 1
+mr_pp 'r "rGnd_174" '("XInverter_1_3/MMn2_s" "Gnd_7") 0.124667
+mr_pp 'r "rGnd_175" '("XInverter_1_3/MMn2_b" "Gnd_61") 0.000454545
+mr_pp 'r "rGnd_176" '("XInverter_1_3/MMn2_b" "Gnd_37") 0.000454545
+mr_pp 'r "rGnd_177" '("XInverter_1_3/MMn2_b" "Gnd_13") 0.000454545
+mr_pp 'r "rGnd_178" '("XInverter_1_1/MMn2_b" "XInverter_1_3/MMn2_b") 0.01
+mr_pp 'r "rGnd_179" '("XInverter_1_2/MMn2_b" "XInverter_1_3/MMn2_b") 0.01
+
+
+mr_ni "Vdd" 39.9185 1.55634e-16 7.25875e-15 '( "XInverter_1_1/MMp2_b" "XInverter_1_2/MMp2_b" "XInverter_1_3/MMp2_b" "XInverter_1_1/MMp2_s" "XInverter_1_2/MMp2_s" "XInverter_1_3/MMp2_s" )
+mr_pp 'c "ciVdd_79" '("c_139_n" "Gnd") 0.00168612f
+mr_pp 'c "ciVdd_80" '("c_138_n" "Gnd") 0.00168612f
+mr_pp 'c "ciVdd_81" '("c_137_n" "Gnd") 0.00168612f
+mr_pp 'c "ciVdd_82" '("c_126_n" "Gnd") 0.0485706f
+mr_pp 'c "ciVdd_83" '("c_125_n" "Gnd") 0.00147733f
+mr_pp 'c "ciVdd_84" '("XInverter_1_1/MMp2_s" "Gnd") 1.43764e-19
+mr_pp 'c "ciVdd_85" '("c_122_n" "Gnd") 0.0485706f
+mr_pp 'c "ciVdd_86" '("c_121_n" "Gnd") 0.00147733f
+mr_pp 'c "ciVdd_87" '("XInverter_1_2/MMp2_s" "Gnd") 1.43764e-19
+mr_pp 'c "ciVdd_88" '("c_118_n" "Gnd") 0.0485706f
+mr_pp 'c "ciVdd_89" '("c_117_n" "Gnd") 0.00147733f
+mr_pp 'c "ciVdd_90" '("XInverter_1_3/MMp2_s" "Gnd") 1.43764e-19
+mr_pp 'r "rVdd_91" '("c_146_n" "c_150_n") 0.109853
+mr_pp 'r "rVdd_92" '("c_146_n" "Vdd_120") 0.450571
+mr_pp 'r "rVdd_93" '("c_143_n" "c_149_n") 0.109853
+mr_pp 'r "rVdd_94" '("c_143_n" "Vdd_118") 0.450571
+mr_pp 'r "rVdd_95" '("c_140_n" "c_148_n") 0.109853
+mr_pp 'r "rVdd_96" '("c_140_n" "Vdd_116") 0.450571
+mr_pp 'r "rVdd_97" '("c_139_n" "c_150_n") 0.0925806
+mr_pp 'r "rVdd_98" '("c_138_n" "c_149_n") 0.0925806
+mr_pp 'r "rVdd_99" '("c_137_n" "c_148_n") 0.0925806
+mr_pp 'r "rVdd_100" '("c_135_n" "c_150_n") 0.109853
+mr_pp 'r "rVdd_101" '("c_135_n" "c_136_n") 3.16757
+mr_pp 'r "rVdd_102" '("Vdd_109" "c_147_n") 0.0418175
+mr_pp 'r "rVdd_103" '("c_133_n" "c_149_n") 0.109853
+mr_pp 'r "rVdd_104" '("c_133_n" "Vdd_109") 3.16757
+mr_pp 'r "rVdd_105" '("c_130_n" "c_148_n") 0.109853
+mr_pp 'r "rVdd_106" '("c_130_n" "c_132_n") 3.16757
+mr_pp 'r "rVdd_107" '("c_129_n" "c_136_n") 0.212317
+mr_pp 'r "rVdd_108" '("Vdd_104" "c_147_n") 0.160909
+mr_pp 'r "rVdd_109" '("Vdd_104" "c_129_n") 4.12843
+mr_pp 'r "rVdd_110" '("Vdd_102" "c_147_n") 0.160909
+mr_pp 'r "rVdd_111" '("Vdd_101" "c_132_n") 0.212317
+mr_pp 'r "rVdd_112" '("Vdd" "Vdd_102") 3.19471
+mr_pp 'r "rVdd_113" '("Vdd" "Vdd_101") 0.933714
+mr_pp 'r "rVdd_114" '("c_126_n" "Vdd_93") 0.000270078
+mr_pp 'r "rVdd_115" '("Vdd_89" "c_126_n") 0.283312
+mr_pp 'r "rVdd_116" '("Vdd_87" "Vdd_89") 0.00162047
+mr_pp 'r "rVdd_117" '("c_125_n" "Vdd_120") 0.103491
+mr_pp 'r "rVdd_118" '("Vdd_85" "c_126_n") 0.234926
+mr_pp 'r "rVdd_119" '("Vdd_85" "c_125_n") 1.254
+mr_pp 'r "rVdd_120" '("Vdd_84" "c_139_n") 1.254
+mr_pp 'r "rVdd_121" '("Vdd_84" "Vdd_87") 0.234926
+mr_pp 'r "rVdd_122" '("Vdd_82" "Vdd_93") 0.5
+mr_pp 'r "rVdd_123" '("XInverter_1_1/MMp2_s" "Vdd_82") 0.0623333
+mr_pp 'r "rVdd_124" '("Vdd_77" "Vdd_89") 1
+mr_pp 'r "rVdd_125" '("c_165_p" "Vdd_89") 1
+mr_pp 'r "rVdd_126" '("XInverter_1_1/MMp2_b" "Vdd_77") 0.215909
+mr_pp 'r "rVdd_127" '("XInverter_1_1/MMp2_b" "c_165_p") 0.215909
+mr_pp 'r "rVdd_128" '("c_122_n" "Vdd_62") 0.000270078
+mr_pp 'r "rVdd_129" '("Vdd_58" "c_122_n") 0.283312
+mr_pp 'r "rVdd_130" '("Vdd_56" "Vdd_58") 0.00162047
+mr_pp 'r "rVdd_131" '("c_121_n" "Vdd_118") 0.103491
+mr_pp 'r "rVdd_132" '("Vdd_54" "c_122_n") 0.234926
+mr_pp 'r "rVdd_133" '("Vdd_54" "c_121_n") 1.254
+mr_pp 'r "rVdd_134" '("Vdd_53" "c_138_n") 1.254
+mr_pp 'r "rVdd_135" '("Vdd_53" "Vdd_56") 0.234926
+mr_pp 'r "rVdd_136" '("Vdd_51" "Vdd_62") 0.5
+mr_pp 'r "rVdd_137" '("XInverter_1_2/MMp2_s" "Vdd_51") 0.0623333
+mr_pp 'r "rVdd_138" '("Vdd_46" "Vdd_58") 1
+mr_pp 'r "rVdd_139" '("c_174_p" "Vdd_58") 1
+mr_pp 'r "rVdd_140" '("XInverter_1_2/MMp2_b" "Vdd_46") 0.215909
+mr_pp 'r "rVdd_141" '("XInverter_1_2/MMp2_b" "c_174_p") 0.215909
+mr_pp 'r "rVdd_142" '("c_118_n" "Vdd_31") 0.000270078
+mr_pp 'r "rVdd_143" '("Vdd_27" "c_118_n") 0.283312
+mr_pp 'r "rVdd_144" '("Vdd_25" "Vdd_27") 0.00162047
+mr_pp 'r "rVdd_145" '("c_117_n" "Vdd_116") 0.103491
+mr_pp 'r "rVdd_146" '("Vdd_23" "c_118_n") 0.234926
+mr_pp 'r "rVdd_147" '("Vdd_23" "c_117_n") 1.254
+mr_pp 'r "rVdd_148" '("Vdd_22" "c_137_n") 1.254
+mr_pp 'r "rVdd_149" '("Vdd_22" "Vdd_25") 0.234926
+mr_pp 'r "rVdd_150" '("Vdd_20" "Vdd_31") 0.5
+mr_pp 'r "rVdd_151" '("XInverter_1_3/MMp2_s" "Vdd_20") 0.0623333
+mr_pp 'r "rVdd_152" '("Vdd_15" "Vdd_27") 1
+mr_pp 'r "rVdd_153" '("c_156_p" "Vdd_27") 1
+mr_pp 'r "rVdd_154" '("XInverter_1_3/MMp2_b" "Vdd_15") 0.215909
+mr_pp 'r "rVdd_155" '("XInverter_1_3/MMp2_b" "c_156_p") 0.215909
+
+
+mr_ni "In3" 6.94539 4.1944e-19 1.002e-15 '( "XInverter_1_3/MMn2_g" "XInverter_1_3/MMp2_g" )
+mr_pp 'c "ciIn3_29" '("c_205_n" "Gnd") 1.43518e-19
+mr_pp 'c "ciIn3_30" '("c_204_n" "Gnd") 1.60673e-19
+mr_pp 'c "ciIn3_31" '("XInverter_1_3/MMn2_g" "Gnd") 1.15249e-19
+mr_pp 'r "rIn3_32" '("In3" "c_205_n") 0.1064
+mr_pp 'r "rIn3_33" '("In3_14" "c_205_n") 1.1
+mr_pp 'r "rIn3_34" '("In3_10" "c_204_n") 0.105861
+mr_pp 'r "rIn3_35" '("In3_7" "c_204_n") 0.105861
+mr_pp 'r "rIn3_36" '("c_203_n" "In3_14") 0.199754
+mr_pp 'r "rIn3_37" '("c_200_n" "c_204_n") 0.0275115
+mr_pp 'r "rIn3_38" '("c_200_n" "c_203_n") 2.69
+mr_pp 'r "rIn3_39" '("XInverter_1_3/MMp2_g" "In3_10") 1.55
+mr_pp 'r "rIn3_40" '("XInverter_1_3/MMn2_g" "In3_7") 1.06
+
+
+mr_ni "In1" 6.87454 3.90034e-19 9.92892e-16 '( "XInverter_1_1/MMn2_g" "XInverter_1_1/MMp2_g" )
+mr_pp 'c "ciIn1_29" '("In1" "Gnd") 1.14112e-19
+mr_pp 'c "ciIn1_30" '("c_233_n" "Gnd") 1.60673e-19
+mr_pp 'c "ciIn1_31" '("XInverter_1_1/MMn2_g" "Gnd") 1.15249e-19
+mr_pp 'r "rIn1_32" '("In1" "In1_22") 0.105556
+mr_pp 'r "rIn1_33" '("In1_14" "In1_22") 1.1
+mr_pp 'r "rIn1_34" '("In1_14" "c_232_n") 0.199754
+mr_pp 'r "rIn1_35" '("In1_10" "c_233_n") 0.105861
+mr_pp 'r "rIn1_36" '("In1_7" "c_233_n") 0.105861
+mr_pp 'r "rIn1_37" '("c_229_n" "c_233_n") 0.0275115
+mr_pp 'r "rIn1_38" '("c_229_n" "c_232_n") 2.62
+mr_pp 'r "rIn1_39" '("XInverter_1_1/MMp2_g" "In1_10") 1.55
+mr_pp 'r "rIn1_40" '("XInverter_1_1/MMn2_g" "In1_7") 1.06
+
+
+mr_ni "In2" 6.82954 4.26377e-19 9.87057e-16 '( "XInverter_1_2/MMn2_g" "XInverter_1_2/MMp2_g" )
+mr_pp 'c "ciIn2_29" '("In2" "Gnd") 1.50454e-19
+mr_pp 'c "ciIn2_30" '("c_262_n" "Gnd") 1.60673e-19
+mr_pp 'c "ciIn2_31" '("XInverter_1_2/MMn2_g" "Gnd") 1.15249e-19
+mr_pp 'r "rIn2_32" '("In2" "In2_21") 0.105556
+mr_pp 'r "rIn2_33" '("In2_14" "In2_21") 1.1
+mr_pp 'r "rIn2_34" '("In2_10" "c_262_n") 0.105861
+mr_pp 'r "rIn2_35" '("In2_7" "c_262_n") 0.105861
+mr_pp 'r "rIn2_36" '("c_261_n" "In2_14") 0.199754
+mr_pp 'r "rIn2_37" '("c_258_n" "c_262_n") 0.0275115
+mr_pp 'r "rIn2_38" '("c_258_n" "c_261_n") 2.575
+mr_pp 'r "rIn2_39" '("XInverter_1_2/MMp2_g" "In2_10") 1.55
+mr_pp 'r "rIn2_40" '("XInverter_1_2/MMn2_g" "In2_7") 1.06
+
+
+mr_ni "Out3" 21.4882 7.8133e-19 2.50319e-15 '( "XInverter_1_3/MMn2_d" "XInverter_1_3/MMp2_d" )
+mr_pp 'c "ciOut3_37" '("c_291_n" "Gnd") 1.43518e-19
+mr_pp 'c "ciOut3_38" '("c_284_n" "Gnd") 1.21516e-19
+mr_pp 'c "ciOut3_39" '("c_302_n" "Gnd") 2.19551e-19
+mr_pp 'c "ciOut3_40" '("c_283_n" "Gnd") 2.96745e-19
+mr_pp 'r "rOut3_41" '("Out3_32" "c_299_n") 0.177913
+mr_pp 'r "rOut3_42" '("c_297_n" "c_298_n") 0.139682
+mr_pp 'r "rOut3_43" '("Out3_26" "c_297_n") 5.31429
+mr_pp 'r "rOut3_44" '("c_294_n" "Out3_26") 0.139682
+mr_pp 'r "rOut3_45" '("c_294_n" "c_299_n") 7.03214
+mr_pp 'r "rOut3_46" '("Out3" "c_298_n") 3.08214
+mr_pp 'r "rOut3_47" '("c_288_n" "Out3_32") 2
+mr_pp 'r "rOut3_48" '("c_288_n" "c_291_n") 0.225284
+mr_pp 'r "rOut3_49" '("c_288_n" "Out3_21") 0.225284
+mr_pp 'r "rOut3_50" '("Out3_11" "c_291_n") 0.878222
+mr_pp 'r "rOut3_51" '("c_284_n" "Out3_21") 0.586044
+mr_pp 'r "rOut3_52" '("c_302_n" "Out3_11") 0.5
+mr_pp 'r "rOut3_53" '("XInverter_1_3/MMp2_d" "c_302_n") 0.0625
+mr_pp 'r "rOut3_54" '("c_283_n" "c_284_n") 1
+mr_pp 'r "rOut3_55" '("XInverter_1_3/MMn2_d" "c_283_n") 0.125
+
+
+mr_ni "Out2" 14.9374 7.88267e-19 1.98198e-15 '( "XInverter_1_2/MMn2_d" "XInverter_1_2/MMp2_d" )
+mr_pp 'c "ciOut2_33" '("c_328_n" "Gnd") 1.50454e-19
+mr_pp 'c "ciOut2_34" '("c_321_n" "Gnd") 1.21516e-19
+mr_pp 'c "ciOut2_35" '("c_336_n" "Gnd") 2.19551e-19
+mr_pp 'c "ciOut2_36" '("c_320_n" "Gnd") 2.96745e-19
+mr_pp 'r "rOut2_37" '("Out2_28" "c_333_n") 0.177913
+mr_pp 'r "rOut2_38" '("Out2" "c_333_n") 9.15714
+mr_pp 'r "rOut2_39" '("c_325_n" "Out2_28") 2
+mr_pp 'r "rOut2_40" '("c_325_n" "c_328_n") 0.225284
+mr_pp 'r "rOut2_41" '("c_325_n" "Out2_21") 0.225284
+mr_pp 'r "rOut2_42" '("Out2_11" "c_328_n") 0.878222
+mr_pp 'r "rOut2_43" '("c_321_n" "Out2_21") 0.586044
+mr_pp 'r "rOut2_44" '("c_336_n" "Out2_11") 0.5
+mr_pp 'r "rOut2_45" '("XInverter_1_2/MMp2_d" "c_336_n") 0.0625
+mr_pp 'r "rOut2_46" '("c_320_n" "c_321_n") 1
+mr_pp 'r "rOut2_47" '("XInverter_1_2/MMn2_d" "c_320_n") 0.125
+
+
+mr_ni "Out1" 19.7668 7.51925e-19 2.53894e-15 '( "XInverter_1_1/MMn2_d" "XInverter_1_1/MMp2_d" )
+mr_pp 'c "ciOut1_32" '("c_359_n" "Gnd") 1.14112e-19
+mr_pp 'c "ciOut1_33" '("c_354_n" "Gnd") 1.21516e-19
+mr_pp 'c "ciOut1_34" '("c_367_n" "Gnd") 2.19551e-19
+mr_pp 'c "ciOut1_35" '("c_353_n" "Gnd") 2.96745e-19
+mr_pp 'r "rOut1_36" '("Out1_34" "c_365_n") 0.177913
+mr_pp 'r "rOut1_37" '("Out1_26" "c_364_n") 0.139682
+mr_pp 'r "rOut1_38" '("Out1_26" "c_363_n") 5.26786
+mr_pp 'r "rOut1_39" '("c_361_n" "c_363_n") 0.139682
+mr_pp 'r "rOut1_40" '("c_361_n" "c_365_n") 7.00714
+mr_pp 'r "rOut1_41" '("Out1" "c_364_n") 1.43214
+mr_pp 'r "rOut1_42" '("c_357_n" "Out1_34") 2
+mr_pp 'r "rOut1_43" '("c_357_n" "c_359_n") 0.225284
+mr_pp 'r "rOut1_44" '("c_357_n" "Out1_21") 0.225284
+mr_pp 'r "rOut1_45" '("Out1_11" "c_359_n") 0.878222
+mr_pp 'r "rOut1_46" '("c_354_n" "Out1_21") 0.586044
+mr_pp 'r "rOut1_47" '("c_367_n" "Out1_11") 0.5
+mr_pp 'r "rOut1_48" '("XInverter_1_1/MMp2_d" "c_367_n") 0.0625
+mr_pp 'r "rOut1_49" '("c_353_n" "c_354_n") 1
+mr_pp 'r "rOut1_50" '("XInverter_1_1/MMn2_d" "c_353_n") 0.125
+
+mr_pp 'c "cc_1" '("XInverter_1_3/MMn2_b" "c_117_n") 0.0363085f
+mr_pp 'c "cc_2" '("c_2_p" "c_118_n") 0.0179632f
+mr_pp 'c "cc_3" '("c_3_p" "c_118_n") 5.54695e-19
+mr_pp 'c "cc_4" '("c_4_p" "c_118_n") 9.50187e-19
+mr_pp 'c "cc_5" '("XInverter_1_3/MMn2_b" "c_121_n") 0.0363085f
+mr_pp 'c "cc_6" '("c_6_p" "c_122_n") 0.0179632f
+mr_pp 'c "cc_7" '("c_4_p" "c_122_n") 5.54695e-19
+mr_pp 'c "cc_8" '("c_8_p" "c_122_n") 9.50187e-19
+mr_pp 'c "cc_9" '("XInverter_1_3/MMn2_b" "c_125_n") 0.0363085f
+mr_pp 'c "cc_10" '("c_10_p" "c_126_n") 0.0179632f
+mr_pp 'c "cc_11" '("c_8_p" "c_126_n") 5.54695e-19
+mr_pp 'c "cc_12" '("XInverter_1_3/MMn2_b" "Vdd") 0.906564f
+mr_pp 'c "cc_13" '("XInverter_1_3/MMn2_b" "c_129_n") 0.906564f
+mr_pp 'c "cc_14" '("XInverter_1_3/MMn2_b" "c_130_n") 0.663993f
+mr_pp 'c "cc_15" '("c_4_p" "c_130_n") 0.208884f
+mr_pp 'c "cc_16" '("XInverter_1_3/MMn2_b" "c_132_n") 0.112981f
+mr_pp 'c "cc_17" '("XInverter_1_3/MMn2_b" "c_133_n") 0.655316f
+mr_pp 'c "cc_18" '("c_8_p" "c_133_n") 0.209134f
+mr_pp 'c "cc_19" '("XInverter_1_3/MMn2_b" "c_135_n") 0.692434f
+mr_pp 'c "cc_20" '("XInverter_1_3/MMn2_b" "c_136_n") 0.0948108f
+mr_pp 'c "cc_21" '("XInverter_1_3/MMn2_b" "c_137_n") 0.0542311f
+mr_pp 'c "cc_22" '("XInverter_1_3/MMn2_b" "c_138_n") 0.0542311f
+mr_pp 'c "cc_23" '("XInverter_1_3/MMn2_b" "c_139_n") 0.0542311f
+mr_pp 'c "cc_24" '("XInverter_1_3/MMn2_b" "c_140_n") 0.349012f
+mr_pp 'c "cc_25" '("c_6_p" "c_140_n") 0.00105724f
+mr_pp 'c "cc_26" '("c_26_p" "c_140_n") 0.00818242f
+mr_pp 'c "cc_27" '("XInverter_1_3/MMn2_b" "c_143_n") 0.349012f
+mr_pp 'c "cc_28" '("c_10_p" "c_143_n") 0.00105724f
+mr_pp 'c "cc_29" '("c_29_p" "c_143_n") 0.00818242f
+mr_pp 'c "cc_30" '("XInverter_1_3/MMn2_b" "c_146_n") 0.448755f
+mr_pp 'c "cc_31" '("XInverter_1_3/MMn2_b" "c_147_n") 0.0615482f
+mr_pp 'c "cc_32" '("XInverter_1_3/MMn2_b" "c_148_n") 0.0253489f
+mr_pp 'c "cc_33" '("XInverter_1_3/MMn2_b" "c_149_n") 0.0253489f
+mr_pp 'c "cc_34" '("XInverter_1_3/MMn2_b" "c_150_n") 0.0389611f
+mr_pp 'c "cc_35" '("XInverter_1_3/MMn2_b" "XInverter_1_3/MMn2_g") 0.115621f
+mr_pp 'c "cc_36" '("XInverter_1_3/MMn2_s" "XInverter_1_3/MMn2_g") 0.00408761f
+mr_pp 'c "cc_37" '("c_3_p" "XInverter_1_3/MMn2_g") 0.0398854f
+mr_pp 'c "cc_38" '("XInverter_1_3/MMn2_b" "XInverter_1_3/MMp2_g") 0.0039868f
+mr_pp 'c "cc_39" '("XInverter_1_3/MMn2_b" "c_200_n") 0.193762f
+mr_pp 'c "cc_40" '("XInverter_1_3/MMn2_s" "c_200_n") 0.0100674f
+mr_pp 'c "cc_41" '("c_2_p" "c_200_n") 0.0240369f
+mr_pp 'c "cc_42" '("XInverter_1_3/MMn2_b" "c_203_n") 0.138795f
+mr_pp 'c "cc_43" '("XInverter_1_3/MMn2_b" "c_204_n") 0.00878029f
+mr_pp 'c "cc_44" '("XInverter_1_3/MMn2_b" "c_205_n") 0.032593f
+mr_pp 'c "cc_45" '("c_3_p" "c_205_n") 0.00301069f
+mr_pp 'c "cc_46" '("XInverter_1_3/MMn2_b" "XInverter_1_1/MMn2_g") 0.115621f
+mr_pp 'c "cc_47" '("XInverter_1_1/MMn2_s" "XInverter_1_1/MMn2_g") 0.00408761f
+mr_pp 'c "cc_48" '("c_8_p" "XInverter_1_1/MMn2_g") 0.0396893f
+mr_pp 'c "cc_49" '("XInverter_1_3/MMn2_b" "XInverter_1_1/MMp2_g") 0.0039868f
+mr_pp 'c "cc_50" '("XInverter_1_3/MMn2_b" "c_229_n") 0.184781f
+mr_pp 'c "cc_51" '("XInverter_1_1/MMn2_s" "c_229_n") 0.0100674f
+mr_pp 'c "cc_52" '("c_10_p" "c_229_n") 0.0240369f
+mr_pp 'c "cc_53" '("XInverter_1_3/MMn2_b" "c_232_n") 0.138814f
+mr_pp 'c "cc_54" '("XInverter_1_3/MMn2_b" "c_233_n") 0.00878029f
+mr_pp 'c "cc_55" '("XInverter_1_3/MMn2_b" "In1") 0.03256f
+mr_pp 'c "cc_56" '("c_8_p" "In1") 0.00301894f
+mr_pp 'c "cc_57" '("XInverter_1_3/MMn2_b" "XInverter_1_2/MMn2_g") 0.115621f
+mr_pp 'c "cc_58" '("XInverter_1_2/MMn2_s" "XInverter_1_2/MMn2_g") 0.00408761f
+mr_pp 'c "cc_59" '("c_4_p" "XInverter_1_2/MMn2_g") 0.0396893f
+mr_pp 'c "cc_60" '("XInverter_1_3/MMn2_b" "XInverter_1_2/MMp2_g") 0.0039868f
+mr_pp 'c "cc_61" '("XInverter_1_3/MMn2_b" "c_258_n") 0.179008f
+mr_pp 'c "cc_62" '("XInverter_1_2/MMn2_s" "c_258_n") 0.0100674f
+mr_pp 'c "cc_63" '("c_6_p" "c_258_n") 0.0240369f
+mr_pp 'c "cc_64" '("XInverter_1_3/MMn2_b" "c_261_n") 0.138765f
+mr_pp 'c "cc_65" '("XInverter_1_3/MMn2_b" "c_262_n") 0.00878029f
+mr_pp 'c "cc_66" '("XInverter_1_3/MMn2_b" "In2") 0.0325462f
+mr_pp 'c "cc_67" '("c_4_p" "In2") 0.00301069f
+mr_pp 'c "cc_68" '("XInverter_1_3/MMn2_b" "c_283_n") 0.00100911f
+mr_pp 'c "cc_69" '("XInverter_1_3/MMn2_b" "c_284_n") 0.0211421f
+mr_pp 'c "cc_70" '("c_2_p" "c_284_n") 0.0176638f
+mr_pp 'c "cc_71" '("c_3_p" "c_284_n") 0.00998621f
+mr_pp 'c "cc_72" '("c_26_p" "c_284_n") 0.00353268f
+mr_pp 'c "cc_73" '("XInverter_1_3/MMn2_b" "c_288_n") 0.0550219f
+mr_pp 'c "cc_74" '("c_3_p" "c_288_n") 0.00101672f
+mr_pp 'c "cc_75" '("c_26_p" "c_288_n") 8.89774e-19
+mr_pp 'c "cc_76" '("XInverter_1_3/MMn2_b" "c_291_n") 0.0016878f
+mr_pp 'c "cc_77" '("c_26_p" "c_291_n") 0.00771054f
+mr_pp 'c "cc_78" '("XInverter_1_3/MMn2_b" "Out3") 0.316787f
+mr_pp 'c "cc_79" '("XInverter_1_3/MMn2_b" "c_294_n") 0.733059f
+mr_pp 'c "cc_80" '("c_3_p" "c_294_n") 0.0287521f
+mr_pp 'c "cc_81" '("c_26_p" "c_294_n") 0.141138f
+mr_pp 'c "cc_82" '("XInverter_1_3/MMn2_b" "c_297_n") 0.581629f
+mr_pp 'c "cc_83" '("XInverter_1_3/MMn2_b" "c_298_n") 0.0215621f
+mr_pp 'c "cc_84" '("XInverter_1_3/MMn2_b" "c_299_n") 0.0232067f
+mr_pp 'c "cc_85" '("c_3_p" "c_299_n") 0.00347276f
+mr_pp 'c "cc_86" '("c_26_p" "c_299_n") 8.94649e-19
+mr_pp 'c "cc_87" '("XInverter_1_3/MMn2_b" "c_320_n") 0.00100911f
+mr_pp 'c "cc_88" '("XInverter_1_3/MMn2_b" "c_321_n") 0.0211421f
+mr_pp 'c "cc_89" '("c_6_p" "c_321_n") 0.0176638f
+mr_pp 'c "cc_90" '("c_4_p" "c_321_n") 0.00998621f
+mr_pp 'c "cc_91" '("c_29_p" "c_321_n") 0.00353268f
+mr_pp 'c "cc_92" '("XInverter_1_3/MMn2_b" "c_325_n") 0.0550224f
+mr_pp 'c "cc_93" '("c_4_p" "c_325_n") 0.00101672f
+mr_pp 'c "cc_94" '("c_29_p" "c_325_n") 8.89774e-19
+mr_pp 'c "cc_95" '("XInverter_1_3/MMn2_b" "c_328_n") 0.0016878f
+mr_pp 'c "cc_96" '("c_29_p" "c_328_n") 0.00771054f
+mr_pp 'c "cc_97" '("XInverter_1_3/MMn2_b" "Out2") 0.912109f
+mr_pp 'c "cc_98" '("c_4_p" "Out2") 0.0275506f
+mr_pp 'c "cc_99" '("c_29_p" "Out2") 0.142162f
+mr_pp 'c "cc_100" '("XInverter_1_3/MMn2_b" "c_333_n") 0.0232067f
+mr_pp 'c "cc_101" '("c_4_p" "c_333_n") 0.00125036f
+mr_pp 'c "cc_102" '("c_29_p" "c_333_n") 8.94649e-19
+mr_pp 'c "cc_103" '("XInverter_1_3/MMn2_b" "c_353_n") 0.00100911f
+mr_pp 'c "cc_104" '("XInverter_1_3/MMn2_b" "c_354_n") 0.0422728f
+mr_pp 'c "cc_105" '("c_10_p" "c_354_n") 0.0176638f
+mr_pp 'c "cc_106" '("c_8_p" "c_354_n") 0.00998621f
+mr_pp 'c "cc_107" '("XInverter_1_3/MMn2_b" "c_357_n") 0.0550423f
+mr_pp 'c "cc_108" '("c_8_p" "c_357_n") 0.00101672f
+mr_pp 'c "cc_109" '("XInverter_1_3/MMn2_b" "c_359_n") 0.0017699f
+mr_pp 'c "cc_110" '("XInverter_1_3/MMn2_b" "Out1") 0.386771f
+mr_pp 'c "cc_111" '("XInverter_1_3/MMn2_b" "c_361_n") 0.786027f
+mr_pp 'c "cc_112" '("c_8_p" "c_361_n") 0.0355934f
+mr_pp 'c "cc_113" '("XInverter_1_3/MMn2_b" "c_363_n") 0.575116f
+mr_pp 'c "cc_114" '("XInverter_1_3/MMn2_b" "c_364_n") 0.0215621f
+mr_pp 'c "cc_115" '("XInverter_1_3/MMn2_b" "c_365_n") 0.0232067f
+mr_pp 'c "cc_116" '("c_8_p" "c_365_n") 0.00125036f
+mr_pp 'c "cc_117" '("XInverter_1_3/MMp2_b" "XInverter_1_3/MMp2_g") 0.15655f
+mr_pp 'c "cc_118" '("XInverter_1_3/MMp2_s" "XInverter_1_3/MMp2_g") 0.0168752f
+mr_pp 'c "cc_119" '("c_117_n" "XInverter_1_3/MMp2_g") 0.0160231f
+mr_pp 'c "cc_120" '("c_118_n" "XInverter_1_3/MMp2_g") 0.0392735f
+mr_pp 'c "cc_121" '("c_140_n" "XInverter_1_3/MMp2_g") 0.00346998f
+mr_pp 'c "cc_122" '("c_156_p" "c_200_n") 0.00818143f
+mr_pp 'c "cc_123" '("XInverter_1_3/MMp2_s" "c_200_n") 0.0096329f
+mr_pp 'c "cc_124" '("c_118_n" "c_200_n") 0.0206464f
+mr_pp 'c "cc_125" '("c_130_n" "c_205_n") 0.00163912f
+mr_pp 'c "cc_126" '("XInverter_1_1/MMp2_b" "XInverter_1_1/MMp2_g") 0.15655f
+mr_pp 'c "cc_127" '("XInverter_1_1/MMp2_s" "XInverter_1_1/MMp2_g") 0.0168752f
+mr_pp 'c "cc_128" '("c_125_n" "XInverter_1_1/MMp2_g") 0.0160231f
+mr_pp 'c "cc_129" '("c_126_n" "XInverter_1_1/MMp2_g") 0.0392735f
+mr_pp 'c "cc_130" '("c_146_n" "XInverter_1_1/MMp2_g") 0.00346998f
+mr_pp 'c "cc_131" '("c_165_p" "c_229_n") 0.00818143f
+mr_pp 'c "cc_132" '("XInverter_1_1/MMp2_s" "c_229_n") 0.0096329f
+mr_pp 'c "cc_133" '("c_126_n" "c_229_n") 0.0206464f
+mr_pp 'c "cc_134" '("c_135_n" "In1") 0.00163587f
+mr_pp 'c "cc_135" '("XInverter_1_2/MMp2_b" "XInverter_1_2/MMp2_g") 0.15655f
+mr_pp 'c "cc_136" '("XInverter_1_2/MMp2_s" "XInverter_1_2/MMp2_g") 0.0168752f
+mr_pp 'c "cc_137" '("c_121_n" "XInverter_1_2/MMp2_g") 0.0160231f
+mr_pp 'c "cc_138" '("c_122_n" "XInverter_1_2/MMp2_g") 0.0392735f
+mr_pp 'c "cc_139" '("c_143_n" "XInverter_1_2/MMp2_g") 0.00346998f
+mr_pp 'c "cc_140" '("c_174_p" "c_258_n") 0.00818143f
+mr_pp 'c "cc_141" '("XInverter_1_2/MMp2_s" "c_258_n") 0.0096329f
+mr_pp 'c "cc_142" '("c_122_n" "c_258_n") 0.0206464f
+mr_pp 'c "cc_143" '("c_133_n" "In2") 0.00163912f
+mr_pp 'c "cc_144" '("XInverter_1_3/MMp2_b" "c_302_n") 0.00201822f
+mr_pp 'c "cc_145" '("c_118_n" "c_302_n") 2.50961e-19
+mr_pp 'c "cc_146" '("XInverter_1_3/MMp2_b" "c_291_n") 0.0515093f
+mr_pp 'c "cc_147" '("XInverter_1_3/MMp2_s" "c_291_n") 2.44022e-19
+mr_pp 'c "cc_148" '("c_118_n" "c_291_n") 0.0394867f
+mr_pp 'c "cc_149" '("c_140_n" "c_291_n") 0.00711192f
+mr_pp 'c "cc_150" '("XInverter_1_2/MMp2_b" "c_336_n") 0.00201822f
+mr_pp 'c "cc_151" '("c_122_n" "c_336_n") 2.50961e-19
+mr_pp 'c "cc_152" '("XInverter_1_2/MMp2_b" "c_328_n") 0.0515085f
+mr_pp 'c "cc_153" '("XInverter_1_2/MMp2_s" "c_328_n") 2.44022e-19
+mr_pp 'c "cc_154" '("c_122_n" "c_328_n") 0.0394867f
+mr_pp 'c "cc_155" '("c_143_n" "c_328_n") 0.00711192f
+mr_pp 'c "cc_156" '("XInverter_1_1/MMp2_b" "c_367_n") 0.00201822f
+mr_pp 'c "cc_157" '("c_126_n" "c_367_n") 2.50961e-19
+mr_pp 'c "cc_158" '("XInverter_1_1/MMp2_b" "c_359_n") 0.0953121f
+mr_pp 'c "cc_159" '("XInverter_1_1/MMp2_s" "c_359_n") 2.44022e-19
+mr_pp 'c "cc_160" '("c_126_n" "c_359_n") 0.0394867f
+mr_pp 'c "cc_161" '("c_146_n" "c_359_n") 0.00711192f
+mr_pp 'c "cc_162" '("XInverter_1_3/MMn2_g" "c_283_n") 0.00408761f
+mr_pp 'c "cc_163" '("XInverter_1_3/MMp2_g" "c_302_n") 0.0176927f
+mr_pp 'c "cc_164" '("XInverter_1_3/MMn2_g" "c_284_n") 0.0319462f
+mr_pp 'c "cc_165" '("XInverter_1_3/MMn2_g" "c_288_n") 0.0139939f
+mr_pp 'c "cc_166" '("XInverter_1_3/MMp2_g" "c_288_n") 0.00132104f
+mr_pp 'c "cc_167" '("c_204_n" "c_288_n") 0.0112952f
+mr_pp 'c "cc_168" '("c_205_n" "c_288_n") 4.08872e-19
+mr_pp 'c "cc_169" '("XInverter_1_3/MMp2_g" "c_291_n") 0.0728301f
+mr_pp 'c "cc_170" '("c_205_n" "c_299_n") 0.00150807f
+mr_pp 'c "cc_171" '("XInverter_1_1/MMn2_g" "c_353_n") 0.00408761f
+mr_pp 'c "cc_172" '("XInverter_1_1/MMp2_g" "c_367_n") 0.0176927f
+mr_pp 'c "cc_173" '("XInverter_1_1/MMn2_g" "c_354_n") 0.0319462f
+mr_pp 'c "cc_174" '("XInverter_1_1/MMn2_g" "c_357_n") 0.0139926f
+mr_pp 'c "cc_175" '("XInverter_1_1/MMp2_g" "c_357_n") 0.00132072f
+mr_pp 'c "cc_176" '("c_233_n" "c_357_n") 0.0112885f
+mr_pp 'c "cc_177" '("In1" "c_357_n") 4.30409e-19
+mr_pp 'c "cc_178" '("XInverter_1_1/MMp2_g" "c_359_n") 0.0728321f
+mr_pp 'c "cc_179" '("In1" "c_365_n") 0.00156998f
+mr_pp 'c "cc_180" '("XInverter_1_2/MMn2_g" "c_320_n") 0.00408761f
+mr_pp 'c "cc_181" '("XInverter_1_2/MMp2_g" "c_336_n") 0.0176927f
+mr_pp 'c "cc_182" '("XInverter_1_2/MMn2_g" "c_321_n") 0.0319462f
+mr_pp 'c "cc_183" '("XInverter_1_2/MMn2_g" "c_325_n") 0.0139923f
+mr_pp 'c "cc_184" '("XInverter_1_2/MMp2_g" "c_325_n") 0.00132049f
+mr_pp 'c "cc_185" '("c_262_n" "c_325_n") 0.011284f
+mr_pp 'c "cc_186" '("In2" "c_325_n") 4.36766e-19
+mr_pp 'c "cc_187" '("XInverter_1_2/MMp2_g" "c_328_n") 0.0728301f
+mr_pp 'c "cc_188" '("In2" "c_333_n") 0.00157713f
+mr_pp 'c "cc_189" '("c_298_n" "Out2") 0.247804f
+mr_pp 'c "cc_190" '("Out3" "Out1") 0.014759f
+mr_pp 'c "cc_191" '("c_298_n" "c_364_n") 0.014759f
+mr_pp 'c "cc_192" '("Out2" "c_364_n") 0.251554f
+mgc_rve_cell_end
+

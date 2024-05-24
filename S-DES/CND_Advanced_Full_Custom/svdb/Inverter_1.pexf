@@ -1,0 +1,5 @@
+# Automagically generated file: Please do not edit!
+pex_PexParam RUNDIR /home/vlsi/Desktop/CND_Advanced_Full_Custom
+pex_PexParam LAYOUT_PRIMARY Inverter_1
+pex_PexParam TOOL xRC
+pex_PexParam CORNER_PDBS { {Inverter_1 "" Inverter_1.pdb "" } } 

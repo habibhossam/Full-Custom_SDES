@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      vlsi
+HostName                       elc-v1111111-lnx
+ProcessIdentifier              3424
+ProcessCreationTime_UTC        1715707355
+ProcessCreationTime_Readable   Tue May 14 20:22:35 2024 
+AppIdentifier                  OA File System Design Manager
+OSType                         unix
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         /home/vlsi/Videos/FinalProject/CND_Advanced_Full_Custom/CND_Advanced_Full_Custom/AND_2/layout/layout.oa.cdslck
+TimeEditLocked                 Tue May 14 20:53:55 2024 

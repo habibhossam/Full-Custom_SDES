@@ -1,0 +1,5 @@
+# Automagically generated file: Please do not edit!
+pex_PexParam RUNDIR /home/vlsi/Videos/CND_Advanced_Full_Custom
+pex_PexParam LAYOUT_PRIMARY SDES
+pex_PexParam TOOL xRC
+pex_PexParam CORNER_PDBS { {SDES "" SDES.pdb "" } } 

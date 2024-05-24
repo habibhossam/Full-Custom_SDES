@@ -1,0 +1,63 @@
+* SPICE export by:      S-Edit 2022.2.3
+* Export time:          Sat Apr 20 12:17:21 2024
+* Design path:          /home/vlsi/Desktop/CND_Advanced_Full_Custom/lib.defs
+* Library:              CND_Advanced_Full_Custom
+* Cell:                 lab11
+* Testbench:            Spice
+* View:                 schematic
+* Export as:            subcircuit definition
+* Export mode:          hierarchical
+* Exclude empty:        no
+* Exclude .model:       no
+* Exclude .hdl:         no
+* Exclude .end:         no
+* Expand paths:         no
+* Wrap lines:           no
+* Exclude simulator commands:  no
+* Exclude global pins:         no
+* Exclude instance locations:  no
+* Control property name(s):    LVS SPICE
+
+.SUBCKT NMOS25 D G S B
+.ENDS
+.SUBCKT PMOS25 D G S B
+.ENDS
+.SUBCKT NMOS33 D G S B
+.ENDS
+.SUBCKT PMOS33 D G S B
+.ENDS
+
+*************** Subcircuits ***************
+.subckt Inverter_1 In Out Gnd Vdd 
+* Library name: CND_Advanced_Full_Custom
+* Cell name: Inverter_1
+* View name: schematic
+* PORT=Gnd TYPE=Other
+* PORT=Vdd TYPE=Other
+* PORT=In TYPE=In
+* PORT=Out TYPE=Out
+
+MMn2 Out In Gnd Gnd NMOS25 w=750n l=250n m=1 ad=487.5f pd=2.8u as=487.5f ps=2.8u nrd=866.66667m nrs=866.66667m mult=1 delvto=0 mulu0=1 $ $x=4400 $y=3500 $w=400 $h=600
+MMp2 Out In Vdd Vdd PMOS25 w=1.5u l=250n m=1 ad=975f pd=4.3u as=975f ps=4.3u nrd=433.33333m nrs=433.33333m mult=1 delvto=0 mulu0=1 $ $x=4400 $y=4500 $w=400 $h=600
+.ends
+
+.subckt lab11 In1 In2 In3 Out1 Out2 Out3 Gnd Vdd 
+* Library name: CND_Advanced_Full_Custom
+* Cell name: lab11
+* View name: schematic
+* PORT=In2 TYPE=In
+* PORT=In1 TYPE=In
+* PORT=Vdd TYPE=Other
+* PORT=Gnd TYPE=Other
+* PORT=Out1 TYPE=Out
+* PORT=Out2 TYPE=Out
+* PORT=Out3 TYPE=Out
+* PORT=In3 TYPE=In
+
+XInverter_1_1 In1 Out1 Gnd Vdd Inverter_1 $ $x=4900 $y=4900 $w=1800 $h=800
+XInverter_1_2 In2 Out2 Gnd Vdd Inverter_1 $ $x=4900 $y=3700 $w=1800 $h=800
+XInverter_1_3 In3 Out3 Gnd Vdd Inverter_1 $ $x=4900 $y=2300 $w=1800 $h=800
+.ends
+
+
+

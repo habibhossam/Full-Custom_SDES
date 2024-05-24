@@ -1,0 +1,108 @@
+* SPICE export by:      S-Edit 2022.2.3
+* Export time:          Tue May 14 16:52:30 2024
+* Design path:          /home/vlsi/Videos/FinalProject/CND_Advanced_Full_Custom/lib.defs
+* Library:              CND_Advanced_Full_Custom
+* Cell:                 XOR_8bit
+* Testbench:            Spice
+* View:                 schematic
+* Export as:            subcircuit definition
+* Export mode:          hierarchical
+* Exclude empty:        no
+* Exclude .model:       no
+* Exclude .hdl:         no
+* Exclude .end:         no
+* Expand paths:         no
+* Wrap lines:           no
+* Exclude simulator commands:  no
+* Exclude global pins:         no
+* Exclude instance locations:  no
+* Control property name(s):    LVS SPICE
+
+.SUBCKT NMOS25 D G S B
+.ENDS
+.SUBCKT PMOS25 D G S B
+.ENDS
+.SUBCKT NMOS33 D G S B
+.ENDS
+.SUBCKT PMOS33 D G S B
+.ENDS
+
+*************** Subcircuits ***************
+.subckt Inverter_1 In Out Gnd Vdd 
+* Library name: CND_Advanced_Full_Custom
+* Cell name: Inverter_1
+* View name: schematic
+* PORT=Gnd TYPE=Other
+* PORT=Vdd TYPE=Other
+* PORT=In TYPE=In
+* PORT=Out TYPE=Out
+
+MMn2 Out In Gnd Gnd NMOS25 w=750n l=250n m=1 ad=487.5f pd=2.8u as=487.5f ps=2.8u nrd=866.66667m nrs=866.66667m mult=1 delvto=0 mulu0=1 $ $x=4400 $y=3500 $w=400 $h=600
+MMp2 Out In Vdd Vdd PMOS25 w=1.5u l=250n m=1 ad=975f pd=4.3u as=975f ps=4.3u nrd=433.33333m nrs=433.33333m mult=1 delvto=0 mulu0=1 $ $x=4400 $y=4500 $w=400 $h=600
+.ends
+
+.subckt XOR A B Out Gnd Vdd 
+* Library name: CND_Advanced_Full_Custom
+* Cell name: XOR
+* View name: schematic
+* PORT=Vdd TYPE=Other
+* PORT=B TYPE=InOut
+* PORT=Out TYPE=InOut
+* PORT=A TYPE=InOut
+* PORT=Gnd TYPE=Other
+
+XInverter_1_1 A A_bar Gnd Vdd Inverter_1 $ $x=2500 $y=4200 $w=1800 $h=800
+XInverter_1_2 B B_bar Gnd Vdd Inverter_1 $ $x=2400 $y=1600 $w=1800 $h=800
+MMn1 N_1 B Gnd Gnd NMOS25 w=1.5u l=250n m=1 ad=975f pd=4.3u as=975f ps=4.3u nrd=433.33333m nrs=433.33333m mult=1 delvto=0 mulu0=1 $ $x=6900 $y=2600 $w=400 $h=600
+MMn3 Out A N_1 Gnd NMOS25 w=1.5u l=250n m=1 ad=975f pd=4.3u as=975f ps=4.3u nrd=433.33333m nrs=433.33333m mult=1 delvto=0 mulu0=1 $ $x=6900 $y=3200 $w=400 $h=600
+MMn4 N_3 B_bar Gnd Gnd NMOS25 w=1.5u l=250n m=1 ad=975f pd=4.3u as=975f ps=4.3u nrd=433.33333m nrs=433.33333m mult=1 delvto=0 mulu0=1 $ $x=5500 $y=2600 $w=400 $h=600
+MMn5 Out A_bar N_3 Gnd NMOS25 w=1.5u l=250n m=1 ad=975f pd=4.3u as=975f ps=4.3u nrd=433.33333m nrs=433.33333m mult=1 delvto=0 mulu0=1 $ $x=5500 $y=3200 $w=400 $h=600
+MMp2 N_2 A_bar Vdd Vdd PMOS25 w=3u l=250n m=1 ad=1.95p pd=7.3u as=1.95p ps=7.3u nrd=216.66667m nrs=216.66667m mult=1 delvto=0 mulu0=1 $ $x=6900 $y=5000 $w=400 $h=600
+MMp4 Out B N_2 Vdd PMOS25 w=3u l=250n m=1 ad=1.95p pd=7.3u as=1.95p ps=7.3u nrd=216.66667m nrs=216.66667m mult=1 delvto=0 mulu0=1 $ $x=6900 $y=4300 $w=400 $h=600
+MMp5 N_4 A Vdd Vdd PMOS25 w=3u l=250n m=1 ad=1.95p pd=7.3u as=1.95p ps=7.3u nrd=216.66667m nrs=216.66667m mult=1 delvto=0 mulu0=1 $ $x=5600 $y=5000 $w=400 $h=600
+MMp6 Out B_bar N_4 Vdd PMOS25 w=3u l=250n m=1 ad=1.95p pd=7.3u as=1.95p ps=7.3u nrd=216.66667m nrs=216.66667m mult=1 delvto=0 mulu0=1 $ $x=5600 $y=4300 $w=400 $h=600
+.ends
+
+.subckt XOR_8bit I0 I1 I2 I3 I4 I5 I6 I7 K0 K1 K2 K3 K4 K5 K6 K7 O0 O1 O2 O3 O4 O5 O6 O7 Gnd Vdd 
+* Library name: CND_Advanced_Full_Custom
+* Cell name: XOR_8bit
+* View name: schematic
+* PORT=Vdd TYPE=Other
+* PORT=Gnd TYPE=Other
+* PORT=O7 TYPE=Out
+* PORT=O6 TYPE=Out
+* PORT=O5 TYPE=Out
+* PORT=I1 TYPE=In
+* PORT=O1 TYPE=Out
+* PORT=K2 TYPE=In
+* PORT=O0 TYPE=Out
+* PORT=O2 TYPE=Out
+* PORT=K0 TYPE=In
+* PORT=O3 TYPE=Out
+* PORT=I0 TYPE=In
+* PORT=O4 TYPE=Out
+* PORT=K1 TYPE=In
+* PORT=K5 TYPE=In
+* PORT=I5 TYPE=In
+* PORT=K6 TYPE=In
+* PORT=I6 TYPE=In
+* PORT=K7 TYPE=In
+* PORT=I7 TYPE=In
+* PORT=I2 TYPE=In
+* PORT=I4 TYPE=In
+* PORT=K3 TYPE=In
+* PORT=K4 TYPE=In
+* PORT=I3 TYPE=In
+
+XXOR_1 K0 I0 O0 Gnd Vdd XOR $ $x=3900 $y=7000 $w=1600 $h=1000
+XXOR_2 K1 I1 O1 Gnd Vdd XOR $ $x=3900 $y=5900 $w=1600 $h=1000
+XXOR_3 K2 I2 O2 Gnd Vdd XOR $ $x=3900 $y=4800 $w=1600 $h=1000
+XXOR_4 K3 I3 O3 Gnd Vdd XOR $ $x=3900 $y=3700 $w=1600 $h=1000
+XXOR_5 K4 I4 O4 Gnd Vdd XOR $ $x=3900 $y=2600 $w=1600 $h=1000
+XXOR_6 K5 I5 O5 Gnd Vdd XOR $ $x=3900 $y=1500 $w=1600 $h=1000
+XXOR_7 K6 I6 O6 Gnd Vdd XOR $ $x=3900 $y=400 $w=1600 $h=1000
+XXOR_8 K7 I7 O7 Gnd Vdd XOR $ $x=3900 $y=-900 $w=1600 $h=1000
+.ends
+
+
+

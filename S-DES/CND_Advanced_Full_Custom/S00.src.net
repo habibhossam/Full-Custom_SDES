@@ -1,0 +1,124 @@
+* SPICE export by:      S-Edit 2022.2.3
+* Export time:          Tue May 14 23:16:50 2024
+* Design path:          /home/vlsi/Videos/FinalProject/CND_Advanced_Full_Custom/lib.defs
+* Library:              CND_Advanced_Full_Custom
+* Cell:                 S00
+* Testbench:            Spice
+* View:                 schematic
+* Export as:            subcircuit definition
+* Export mode:          hierarchical
+* Exclude empty:        no
+* Exclude .model:       no
+* Exclude .hdl:         no
+* Exclude .end:         no
+* Expand paths:         no
+* Wrap lines:           no
+* Exclude simulator commands:  no
+* Exclude global pins:         no
+* Exclude instance locations:  no
+* Control property name(s):    LVS SPICE
+
+.SUBCKT NMOS25 D G S B
+.ENDS
+.SUBCKT PMOS25 D G S B
+.ENDS
+.SUBCKT NMOS33 D G S B
+.ENDS
+.SUBCKT PMOS33 D G S B
+.ENDS
+
+*************** Subcircuits ***************
+.subckt nand_2 A B Out Gnd Vdd 
+* Library name: CND_Advanced_Full_Custom
+* Cell name: nand_2
+* View name: schematic
+* PORT=B TYPE=In
+* PORT=A TYPE=In
+* PORT=Vdd TYPE=Other
+* PORT=Gnd TYPE=Other
+* PORT=Out TYPE=Out
+
+MMn1 Out A N_1 Gnd NMOS25 w=1.5u l=250n m=1 ad=975f pd=4.3u as=975f ps=4.3u nrd=433.33333m nrs=433.33333m mult=1 delvto=0 mulu0=1 $ $x=4600 $y=3500 $w=400 $h=600
+MMn2 N_1 B Gnd Gnd NMOS25 w=1.5u l=250n m=1 ad=975f pd=4.3u as=975f ps=4.3u nrd=433.33333m nrs=433.33333m mult=1 delvto=0 mulu0=1 $ $x=4600 $y=2300 $w=400 $h=600
+MMp1 Out A Vdd Vdd PMOS25 w=1.5u l=250n m=1 ad=975f pd=4.3u as=975f ps=4.3u nrd=433.33333m nrs=433.33333m mult=1 delvto=0 mulu0=1 $ $x=4000 $y=4800 $w=400 $h=600
+MMp2 Out B Vdd Vdd PMOS25 w=1.5u l=250n m=1 ad=975f pd=4.3u as=975f ps=4.3u nrd=433.33333m nrs=433.33333m mult=1 delvto=0 mulu0=1 $ $x=5100 $y=4800 $w=400 $h=600
+.ends
+
+.subckt Inverter_1 In Out Gnd Vdd 
+* Library name: CND_Advanced_Full_Custom
+* Cell name: Inverter_1
+* View name: schematic
+* PORT=Gnd TYPE=Other
+* PORT=Vdd TYPE=Other
+* PORT=In TYPE=In
+* PORT=Out TYPE=Out
+
+MMn2 Out In Gnd Gnd NMOS25 w=750n l=250n m=1 ad=487.5f pd=2.8u as=487.5f ps=2.8u nrd=866.66667m nrs=866.66667m mult=1 delvto=0 mulu0=1 $ $x=4400 $y=3500 $w=400 $h=600
+MMp2 Out In Vdd Vdd PMOS25 w=1.5u l=250n m=1 ad=975f pd=4.3u as=975f ps=4.3u nrd=433.33333m nrs=433.33333m mult=1 delvto=0 mulu0=1 $ $x=4400 $y=4500 $w=400 $h=600
+.ends
+
+.subckt AND_2 A B Y Gnd Vdd 
+* Library name: CND_Advanced_Full_Custom
+* Cell name: AND_2
+* View name: schematic
+* PORT=Y TYPE=Out
+* PORT=B TYPE=In
+* PORT=Vdd TYPE=Other
+* PORT=Gnd TYPE=Other
+* PORT=A TYPE=In
+
+XInverter_1_1 N_1 Y Gnd Vdd Inverter_1 $ $x=6500 $y=3600 $w=1800 $h=800
+Xnand_2_1 A B N_1 Gnd Vdd nand_2 $ $x=4200 $y=3600 $w=1800 $h=800
+.ends
+
+.subckt nor_2 A B Out Gnd Vdd 
+* Library name: CND_Advanced_Full_Custom
+* Cell name: nor_2
+* View name: schematic
+* PORT=Vdd TYPE=Other
+* PORT=A TYPE=In
+* PORT=Gnd TYPE=Other
+* PORT=B TYPE=In
+* PORT=Out TYPE=Out
+
+MMn1 Out A Gnd Gnd NMOS25 w=750n l=250n m=1 ad=487.5f pd=2.8u as=487.5f ps=2.8u nrd=866.66667m nrs=866.66667m mult=1 delvto=0 mulu0=1 $ $x=4200 $y=2600 $w=400 $h=600
+MMn2 Out B Gnd Gnd NMOS25 w=750n l=250n m=1 ad=487.5f pd=2.8u as=487.5f ps=2.8u nrd=866.66667m nrs=866.66667m mult=1 delvto=0 mulu0=1 $ $x=5500 $y=2600 $w=400 $h=600
+MMp1 N_1 A Vdd Vdd PMOS25 w=1.5u l=250n m=1 ad=975f pd=4.3u as=975f ps=4.3u nrd=433.33333m nrs=433.33333m mult=1 delvto=0 mulu0=1 $ $x=4900 $y=5100 $w=400 $h=600
+MMp2 Out B N_1 Vdd PMOS25 w=1.5u l=250n m=1 ad=975f pd=4.3u as=975f ps=4.3u nrd=433.33333m nrs=433.33333m mult=1 delvto=0 mulu0=1 $ $x=4900 $y=4400 $w=400 $h=600
+.ends
+
+.subckt S00 A B C D S0_0 Gnd Vdd 
+* Library name: CND_Advanced_Full_Custom
+* Cell name: S00
+* View name: schematic
+* PORT=D TYPE=In
+* PORT=B TYPE=In
+* PORT=Vdd TYPE=Other
+* PORT=Gnd TYPE=Other
+* PORT=S0_0 TYPE=Out
+* PORT=A TYPE=In
+* PORT=C TYPE=In
+
+XAND_2_1 A B N_1 Gnd Vdd AND_2 $ $x=1750 $y=5800 $w=1700 $h=800
+XAND_2_2 N_1 D_ N_2 Gnd Vdd AND_2 $ $x=3850 $y=5700 $w=1700 $h=800
+XAND_2_3 N_5 D N_3 Gnd Vdd AND_2 $ $x=3850 $y=4700 $w=1700 $h=800
+XAND_2_4 N_6 D N_4 Gnd Vdd AND_2 $ $x=3850 $y=3700 $w=1700 $h=800
+XAND_2_5 A C N_5 Gnd Vdd AND_2 $ $x=1850 $y=4800 $w=1700 $h=800
+XAND_2_6 A B_ N_6 Gnd Vdd AND_2 $ $x=1850 $y=3800 $w=1700 $h=800
+XAND_2_7 N_8 C_ N_7 Gnd Vdd AND_2 $ $x=3850 $y=2700 $w=1700 $h=800
+XAND_2_8 A_ B N_8 Gnd Vdd AND_2 $ $x=1850 $y=2800 $w=1700 $h=800
+XAND_2_9 N_10 C N_9 Gnd Vdd AND_2 $ $x=3850 $y=1700 $w=1700 $h=800
+XAND_2_10 A_ B_ N_10 Gnd Vdd AND_2 $ $x=1850 $y=1800 $w=1700 $h=800
+XInverter_1_1 A A_ Gnd Vdd Inverter_1 $ $x=-900 $y=1000 $w=800 $h=1800 $r=270
+XInverter_1_2 B B_ Gnd Vdd Inverter_1 $ $x=-1800 $y=1000 $w=800 $h=1800 $r=270
+XInverter_1_3 C C_ Gnd Vdd Inverter_1 $ $x=-2700 $y=1000 $w=800 $h=1800 $r=270
+XInverter_1_4 D D_ Gnd Vdd Inverter_1 $ $x=-3600 $y=1000 $w=800 $h=1800 $r=270
+XInverter_1_5 N_13 N_14 Gnd Vdd Inverter_1 $ $x=7600 $y=3200 $w=1800 $h=800
+Xnand_2_1 N_11 N_12 S0_0 Gnd Vdd nand_2 $ $x=9800 $y=4100 $w=1800 $h=800
+Xnor_2_1 N_2 N_3 N_11 Gnd Vdd nor_2 $ $x=5800 $y=5300 $w=1800 $h=600
+Xnor_2_2 N_14 N_9 N_12 Gnd Vdd nor_2 $ $x=8000 $y=2100 $w=1800 $h=600
+Xnor_2_4 N_4 N_7 N_13 Gnd Vdd nor_2 $ $x=5700 $y=3200 $w=1800 $h=600
+.ends
+
+
+
