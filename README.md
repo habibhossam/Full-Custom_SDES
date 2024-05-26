@@ -71,10 +71,10 @@ These functions are composed to achieve encryption and decryption as shown in th
 
 The project was assessed based on the following criteria:
 
-- **Functionality of Block Level and Schematic**: 40%
-- **Layout and Physical Verification**: 20%
-- **Report and Presentation Quality**: 30%
-- **Creativity and Novelty**: 10%
+- **Functionality of Block Level and Schematic**
+- **Layout and Physical Verification**
+- **Report and Presentation Quality**
+- **Creativity and Novelty**
 
 ## Directory Structure
 
