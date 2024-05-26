@@ -27,15 +27,18 @@ These functions are composed to achieve encryption and decryption as shown in th
 
 ### S-DES Scheme
 
-![S-DES Scheme](https://github.com/habibhossam/Full-Custom_SDES/blob/main/images/sdes_scheme.png)
+![S-DES Scheme](https://github.com/habibhossam/Full-Custom_SDES/assets/104106541/8f926d3c-0aac-43c9-b19b-da51460fa948)
+
 
 ### DES Encryption and Decryption
 
-![DES Encryption and Decryption](https://github.com/habibhossam/Full-Custom_SDES/blob/main/images/des_encryption_decryption.png)
+![DES Encryption and Decryption](https://github.com/habibhossam/Full-Custom_SDES/assets/104106541/98b63440-e10c-44eb-aa22-1de511bc3884)
+
 
 ### Encryption Algorithm Composition
 
-![Encryption Algorithm Composition](https://github.com/habibhossam/Full-Custom_SDES/blob/main/images/encryption_composition.png)
+![Encryption Algorithm Composition](https://github.com/habibhossam/Full-Custom_SDES/assets/104106541/eae0b5b7-23d9-4594-9260-c12a8c99cf3a)
+
 
 ## Tasks Performed
 
